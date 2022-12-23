@@ -5,7 +5,7 @@ import GroupAddIcon from '@mui/icons-material/GroupAdd';
 
 export default function SecondNav() {
   return (
-    <div class="w-[1423px] z-[1] fixed grid grid-cols-2 mx-5">
+    <div class="py-2 px-2 fixed right-0 left-[56px] bg-[#ebebeb] z-[1] grid grid-cols-2">
         <div class='text-left mx-2'>Teams</div>
         {/* <div class="text-right grid grid-cols-3"> */}
         <div class="flex ml-auto">

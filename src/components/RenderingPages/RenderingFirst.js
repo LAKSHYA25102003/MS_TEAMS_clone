@@ -14,7 +14,7 @@ export default function RenderingFirst() {
         </div>
         <div  class="ml-[56px] mt-[54px] grid grid-cols-1">
           <div ><SecondNav/></div>
-          <div class="mx-5 my-[27px] grid grid-cols-5">
+          <div class="bg-[#ebebeb] px-6 py-[80px] grid md:grid-cols-5 sm:grid-cols-3">
             <div>
               <Cards />
             </div>
