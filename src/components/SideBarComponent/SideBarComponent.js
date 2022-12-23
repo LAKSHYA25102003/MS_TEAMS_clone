@@ -10,7 +10,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import { Link } from 'react-router-dom';
 export default function SideBarComponent() {
   return (
-    <div style={{backgroundColor:'#616161'}} class='fixed top-[54px] bottom-[0px] text-center text-[10px] w-14 grid grid-cols-1 gap-4'>
+    <div style={{backgroundColor:'#ebebeb'}} class='fixed top-[54px] bottom-[0px] text-center text-[10px] w-14 grid grid-cols-1 gap-4'>
         <button class='grid my-2 grid-cols-1'>
             <div><NotificationsIcon/></div>
             <div>Activity</div>
@@ -19,10 +19,10 @@ export default function SideBarComponent() {
             <div><ChatIcon/></div>
             <div>Chats</div>
         </button>
-        <Link to='/'><button class='grid my-2 grid-cols-1'>
+        <button class='grid my-2 grid-cols-1'>
             <div><Groups3Icon/></div>
             <div>Teams</div>
-        </button></Link>
+        </button>
         
         <button class='grid my-2 grid-cols-1'>
             <div><AssignmentIcon/></div>
