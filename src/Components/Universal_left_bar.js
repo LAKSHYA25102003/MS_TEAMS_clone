@@ -10,7 +10,7 @@ import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
 export default function Universal_left_bar() {
     return (
         <>
-            <div className='bg-[#ebebeb] fixed top-[60px] w-[72px] bottom-0 flex flex-col'>
+            <div className='bg-[#ebebeb] fixed top-[60px] w-[75px] bottom-0 flex flex-col'>
                 <div className='flex flex-col py-4 cursor-pointer hover:bg-white' style={{"color":"#616161"}}>
                     <div className='flex justify-center items-center'>
                         <NotificationsNoneIcon/>

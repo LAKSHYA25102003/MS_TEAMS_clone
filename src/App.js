@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from './Components/Navbar';
-import Universal_left_bar from './Components/Universal_left_bar';
+import Chat_sidebar from './Components/Chat_sidebar';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Router>
         <Routes>
           <Route path='/home' element={<Navbar />}></Route>
-          <Route path='/l' element={<Universal_left_bar />}></Route>
+          <Route path='/c' element={<Chat_sidebar />}></Route>
         </Routes>
     </Router>
   );
