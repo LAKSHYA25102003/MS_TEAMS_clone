@@ -11,8 +11,8 @@ function Chat_sidebar() {
         <div>
             <Universal_Navbar />
             <Universal_left_bar />
-            <div id='chatSideBar' className='shadow-inner  border-[#ebebeb] fixed left-[75px] top-[60px] w-[230px] md:w-[320px] flex flex-col bg-[#ebebeb97] min-h-screen '>
-                <div id='chatSideBarTop' className='flex items-center border-b-2 border-gray-300 p-4' style={{"color":"#242424"}}>
+            <div id='chatSideBar' className='shadow-inner  border-[#b7b3b36d] fixed left-[75px] top-[60px] w-[230px] md:w-[320px] flex flex-col bg-[#ebebeb97] min-h-screen border-r-2 border-['>
+                <div id='chatSideBarTop' className='flex items-center border-b-[1px] border-gray-300 p-4' style={{ "color": "#242424" }}>
                     <div className='w-1/2 justify-start px-3 text-2xl font-bold'>
                         Chat
                     </div>
@@ -25,14 +25,14 @@ function Chat_sidebar() {
                         </div>
                     </div>
                 </div>
-                <div id='chatFriendsList' className='h-[100vh]' style={{"overflowY":"auto"}}>
-                    <ChatSideBarFriend/>
-                    <ChatSideBarFriend/>
-                    <ChatSideBarFriend/>
-                    <ChatSideBarFriend/>
-                    <ChatSideBarFriend/>
-                    <ChatSideBarFriend/>
-                    <ChatSideBarFriend/>
+                <div id='chatFriendsList' className='h-[100vh]' style={{ "overflowY": "auto" }}>
+                    <ChatSideBarFriend />
+                    <ChatSideBarFriend />
+                    <ChatSideBarFriend />
+                    <ChatSideBarFriend />
+                    <ChatSideBarFriend />
+                    <ChatSideBarFriend />
+                    <ChatSideBarFriend />
                 </div>
             </div>
         </div>

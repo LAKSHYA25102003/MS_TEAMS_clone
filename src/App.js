@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from './Components/Navbar';
-import Chat_sidebar from './Components/Chat_sidebar';
+import Chats from './Pages/Chats';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Router>
         <Routes>
           <Route path='/home' element={<Navbar />}></Route>
-          <Route path='/c' element={<Chat_sidebar />}></Route>
+          <Route path='/chats' element={<Chats />}></Route>
         </Routes>
     </Router>
   );

@@ -26,8 +26,8 @@ export default function Universal_Navbar() {
         </form>
       </div>
       <div id='un_right ' className=' w-1/4 h-full px-5'>
-            <div id='avatar' className='h-full w-full flex justify-end'>
-                <img src={Avatar} alt="Avatar" className='h-[60px] w-[60px] rounded-full  cursor-pointer'/>
+            <div id='avatar' className='h-full w-full flex justify-end items-center'>
+                <img src={Avatar} alt="Avatar" className='h-[45px] w-[45px] rounded-full  cursor-pointer'/>
             </div>
       </div>
     </div>

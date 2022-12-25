@@ -6,8 +6,10 @@ import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
+import { useNavigate } from 'react-router';
 
 export default function Universal_left_bar() {
+    const navigate=useNavigate();
     return (
         <>
             <div className='bg-[#ebebeb] fixed top-[60px] w-[75px] bottom-0 flex flex-col'>
@@ -31,7 +33,7 @@ export default function Universal_left_bar() {
                     <div className='flex justify-center items-center'>
                         <ChatOutlinedIcon/>
                     </div>
-                    <div className=' text-center' style={{"fontSize":"12px"}}>
+                    <div className=' text-center' style={{"fontSize":"12px"}} onClick={()=>{navigate("/chats")}}>
                         Chat
                     </div>
                 </div>
