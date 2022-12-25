@@ -2,6 +2,8 @@ import React from 'react'
 import Avatar from "../Images/profile.jpg"
 import { PermMedia, Label, Room, EmojiEmotions } from "@mui/icons-material"
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import Message from './Message';
+
 
 function Conversation() {
     return (
@@ -19,9 +21,42 @@ function Conversation() {
 
                 </div>
             </div>
-            <div id='conversatioMid' className='pl-10 md:pl-20 pr-[140px] md:pr-[480px]'>
 
+
+
+            <div id='conversatioMid' className='pl-10 md:pl-20 pr-[60px] md:pr-[85px]' style={{"overflowY":"auto","height":"calc(100vh - 242.2px)"}}>
+                <Message own={true}/>
+                <Message own={false}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={false}/>
+                <Message own={true}/>
+                <Message own={false}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
+                <Message own={true}/>
             </div>
+
+
+
             <div id='conversationBottom' className='pl-10 md:pl-20 pr-[140px] md:pr-[480px] fixed bottom-0 right-0 left-[75px]  md:left-[395px] w-full border-t-[.5px] border-gray-300 pt-8'>
                 <div id='conversationBottomTop'  style={{"border":"1px solid #abaaaa","borderRadius":"8px"}}>
                     <input type="text" className='w-full  border-1 h-10 outline-none bg-white px-3 focus:border-b-2 border-[#444791]'  style={{ "borderRadius": "8px" }} placeholder="Type a new message" />
