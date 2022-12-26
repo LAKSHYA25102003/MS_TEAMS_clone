@@ -10,12 +10,9 @@ import HelpIcon from "@mui/icons-material/Help";
 import { Link } from "react-router-dom";
 export default function SideBarComponent() {
   return (
-    <div
-      style={{ backgroundColor: "#ebebeb" }}
-      class="shadow-lg shadow-[#b0aeae] z-[1] fixed top-[54px] bottom-0 text-center text-[9px] w-[56px]"
-    >
+    <div className="bg-[#ebebeb] shadow-lg shadow-[#b0aeae] z-[1] fixed left-0 top-[42px] bottom-0 text-center text-[9px] w-14">
       <div>
-        <button class="my-2">
+        <button className="my-2">
           <div>
             <NotificationsIcon />
           </div>
@@ -28,24 +25,23 @@ export default function SideBarComponent() {
             <div>Chats</div>
         </button> */}
       <div>
-        <button class="my-2">
+        <button className="my-2">
           <div>
             <ChatIcon />
           </div>
           <div>Chats</div>
         </button>
       </div>
-      <div>
-        <button class="my-2">
+      <Link to='/'>
+        <button className="my-2">
           <div>
             <Groups3Icon />
           </div>
           <div>Teams</div>
         </button>
-      </div>
-
+      </Link>
       <div>
-        <button class="my-2">
+        <button className="my-2">
           <div>
             <AssignmentIcon />
           </div>
@@ -54,7 +50,7 @@ export default function SideBarComponent() {
       </div>
 
       <div>
-        <button class="my-2">
+        <button className="my-2">
           <div>
             <CalendarMonthIcon />
           </div>
@@ -62,24 +58,24 @@ export default function SideBarComponent() {
         </button>
       </div>
 
-      <div>
-        <button class="my-2">
+      <Link to='/calls'>
+        <button className="my-2">
           <div>
             <CallIcon />
           </div>
           <div>Calls</div>
         </button>
-      </div>
+      </Link>
 
       <div>
-        <button class="my-2">
+        <button className="my-2">
           <div>
             <InsertDriveFileIcon />
           </div>
           <div>Files</div>
         </button>
       </div>
-      <div class="my-2">
+      <div className="my-2">
         <button>
           <div>
             <HelpIcon />
