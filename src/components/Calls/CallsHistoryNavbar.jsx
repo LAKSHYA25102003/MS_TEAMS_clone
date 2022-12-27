@@ -11,16 +11,16 @@ export default function CallsHistoryNavbar(props) {
       <div className="font-bold text-[15px]">History</div>
       <div className="flex ml-auto gap-4">
         <div>
-          <button>All</button>
+          <button className="px-2 bg-[#f5f2f2] hover:bg-[#ebebeb] rounded-md">All</button>
         </div>
         <div className="sm:hidden md:hidden lg:visible">
-          <button>Missed</button>
+          <button className="px-2 bg-[#f5f2f2] hover:bg-[#ebebeb] rounded-md">Missed</button>
         </div>
         <div className="sm:hidden md:hidden lg:visible">
-          <button>Incoming</button>
+          <button className="px-2 bg-[#f5f2f2] hover:bg-[#ebebeb] rounded-md">Incoming</button>
         </div>
         <div>
-          <button>Voicemail</button>
+          <button className="px-2 bg-[#f5f2f2] hover:bg-[#ebebeb] rounded-md">Voicemail</button>
         </div>
         <div>
           <button
