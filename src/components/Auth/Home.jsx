@@ -15,6 +15,7 @@ function Home() {
         {/* <link rel="icon" href={micro_fav} /> */}
         <title>Video Conferencing, Meetings, Calling | Microsoft Teams</title>
         <Navbar />
+        <section className='bg-white'>
             <div className="topbar h-14 w-full bg-[#4b53bc] justify-center items-center flex">
                 <div className="text-white font-semibold text-center py-3"><h3>The better way to meet: Microsoft Teams Premium Discover more</h3></div>
             </div>
@@ -129,6 +130,7 @@ function Home() {
             <div className="topbar h-16 w-full bg-[#4b53bc] justify-center flex py-12 items-center">
                 <div className="text-white text-center py-3"><h3>Get started with Microsoft Teams today</h3></div>
             </div>
+        </section>
         </>
 
     )
