@@ -78,8 +78,7 @@ const AllAssignment = () => {
         <AssignmentCard />
         <AssignmentCard />
         <AssignmentCard />
-      </div> : <div className="ml-[120px] md:ml-[120px] mr-[20px] md:mr-[48px] mt-[80px] justify-center items-center pb-10">
-        <AssignmentCard />
+      </div> : <div className="ml-[100px] md:ml-[120px] mr-[20px] md:mr-[48px] mt-[80px] justify-center items-center pb-10">
         <AssignmentCard />
         <AssignmentCard />
       </div>}
