@@ -7,7 +7,7 @@ const AssignmentMaterial = () => {
         <div className="flex bg-white rounded-lg pt-1 hover:cursor-pointer hover:shadow-lg my-2 border-[3px]">
             {/* <img src={grp_icon} alt="" className='mx-2 mt-[8px] w-6 h-6' /> */}
             <PictureAsPdfIcon className='mx-2 mt-[8px]'/>
-            <div className="attachementcontainer w-auto mr-20 sm:w-[300px] md:w-[500px] h-10 pt-[8px] text-sm font-semibold ">Assignment.pdf</div>
+            <div className="attachementcontainer mr-20 w-auto h-auto pt-[8px] text-sm font-semibold mb-3 md:mb-2">1st Assignment on Casting and Joining Processing.pdf</div>
         </div>
     )
 }

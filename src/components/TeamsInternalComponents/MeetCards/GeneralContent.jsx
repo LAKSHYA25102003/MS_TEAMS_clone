@@ -16,7 +16,7 @@ import GoToBottom from '../../GoToBottom'
 const GeneralContent = () => {
     return (
     <>
-        <div className="cards ml-[150px] w-[70%] min-[946px]:ml-[450px] mb-4">
+        <div className="cards ml-[85px] w-[70%] min-[946px]:ml-[450px] mb-4">
             <MeetEnded body={"Meeting in General ended: 2m 20s"} />
             <GeneralMessage body={"Dear Students, Quiz 1 will be posted on teams tomorrow morning at 9 AM in the form of teams assignment. You need to upload the scanned copy of your hand written solution on teams. The submission will be open for 1 hour (till 10 AM). Late submissions will attract penalty of marks. It will be a closed book exam. The syllabus is till fluid statics. You need to be online on the teams during the quiz since attendance will be taken. You may be asked to switch on your camera."} />
             <MeetEnded body={"General ended: 16m 34s"} />

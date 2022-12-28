@@ -29,8 +29,8 @@ const AllAssignment = () => {
         </div>
         <div className="ml-[72px] mt-[48px] bg-[#f5f5f5]  justify-center items-center flex">
           {/* <div ><SecondNav/></div> */}
-          <div className="py-5 ml-[90px] md:py-[20px] px-12 justify-center items-center fixed top-10 bg-[#f5f5f5] w-screen border-b-gray-200 border-b-[1px]">
-            <div className="flex space-x-8 pt-2">
+          <div className="p-2 ml-[70px] md:py-[10px] px-4 justify-center items-center fixed top-10 bg-[#f5f5f5] w-screen border-b-gray-200 border-b-[1px]">
+            <div className="flex space-x-4 pt-3 ">
               {isassign?<div className="assigned">
                 <span className='text-[#444791] text-sm font-semibold cursor-pointer border-b-[3px] border-indigo-500' onClick={()=>clickAssign()}>Assigned</span>
               </div>:<div className="assigned">
@@ -64,7 +64,7 @@ const AllAssignment = () => {
           <hr className="my-2 md:my-0 h-px bg-gray-50 border-2 dark:bg-gray-300"></hr>
         </div>
       </div>
-      {isassign ? <div className="ml-[120px] md:ml-[120px] mr-[20px] md:mr-[48px] mt-[80px] justify-center items-center pb-10">
+      {isassign ? <div className="ml-[100px] md:ml-[120px] mr-[20px] md:mr-[48px] mt-[80px] justify-center items-center pb-10">
         <AssignmentCard />
         <AssignmentCard />
         <AssignmentCard />

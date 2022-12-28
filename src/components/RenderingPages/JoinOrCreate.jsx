@@ -24,12 +24,12 @@ const JoinOrCreate = () => {
                     <span className='text-[#6064c9] font-semibold text-base font-["Segoe UI Web", "Segoe UI", "Segoe WP", "Segoe UI Emoji", Tahoma, Arial, sans-serif]'><Link to="/" ><ChevronLeftIcon fontSize='large' className="mb-[2px]" /> <span>Back</span></Link></span>
                 </div>
             </div>
-            <div className="container ml-[105px]">
+            <div className="container ml-[105px] w-screen">
                 <div className="name  text-2xl">
                     Join or create a team
                 </div>
-                <div className="flex flex-wrap">
-                    <div className="flex pr-3">
+                <div class=" md:my-[27px] grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  px-3">
+                    <div className="flex pr-3 ">
                         <div className="createteambox border-2 mt-4 bg-white  w-[268px] h-[260px] rounded-[0.4rem] hover:bg-[#f5f5f5] hover:border-[#f5f5f5]">
                             <div className=" icon ml-[99px] mt-5">
                                 <img className='w-[64px] h-[64px] rounded-md' src={create_icon} alt="" />

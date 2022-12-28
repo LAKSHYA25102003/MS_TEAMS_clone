@@ -6,7 +6,7 @@ import Item from './Item';
 
 const FileInMeetCard = () => {
     return (
-        <div className="flex min-[946px]:w-[90%]">
+        <div className="flex min-[946px]:w-[90%] mr-8 min-[946px]:mr-0">
             <div className="image mr-2">
                 <PersonOutlinedIcon fontSize='small' />
             </div>

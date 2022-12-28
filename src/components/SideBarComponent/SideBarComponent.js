@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
@@ -8,7 +8,11 @@ import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsAc
 import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import { Link, useLocation } from 'react-router-dom';
+import GrpContext from '../../Context/GrpContext/GrpContext';
 export default function SideBarComponent() {
+    const {setgrpState} = useContext(GrpContext);
+
+
     const location = useLocation();
     const [currloc,setCurrloc] = useState("");
 
@@ -32,11 +36,11 @@ export default function SideBarComponent() {
             <div><ChatBubbleOutlineOutlinedIcon/></div>
             <div>Chats</div>
         </button>
-        {currloc.includes("home") || currloc.includes("grp") ? <button class='bg-white text-[#444791]'>
+        {currloc.includes("home") || currloc.includes("grp") ? <button class='bg-white text-[#444791]' onClick={()=>setgrpState("general")}>
             <Link to="/home"><div><GroupsOutlinedIcon/></div>
             <div className='text-[#444791] font-bold '>Teams</div></Link>
-        </button>:<button class='hover:bg-white hover:text-[#444791]'>
-            <Link to="/home"><div><GroupsOutlinedIcon/></div>
+        </button>:<button class='hover:bg-white hover:text-[#444791]' onClick={()=>setgrpState("general")}>
+            <Link to="/home" onClick={()=>setgrpState("general")}><div><GroupsOutlinedIcon/></div>
             <div className=''>Teams</div></Link>
         </button>}
         

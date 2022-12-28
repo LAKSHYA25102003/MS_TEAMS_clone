@@ -32,7 +32,7 @@ const ParticularAssignment = () => {
                 <div className=" px-12 justify-center items-center ">
                     <div className="flex space-x-8">
                         <div className="back pt-10 pl-4">
-                            <span className='text-black font-semibold font-["Segoe UI Web", "Segoe UI", "Segoe WP", "Segoe UI Emoji", Tahoma, Arial, sans-serif] text-3xl' ><span>Assignment 10</span></span>
+                            <div className='text-black font-semibold font-["Segoe UI Web", "Segoe UI", "Segoe WP", "Segoe UI Emoji", Tahoma, Arial, sans-serif] text-2xl pb-3 md:pb-0 md:text-3xl' ><span>1st Assignment on Casting and Joining Processing</span></div>
                             <div className='text-[#737373] font-base font-["Segoe UI Web", "Segoe UI", "Segoe WP", "Segoe UI Emoji", Tahoma, Arial, sans-serif] ' ><span>Due 30 August 2021 23:59</span></div>
                             <div className='pt-4' ><span></span></div>
                             <div className='text-[#737373] font-semibold font-["Segoe UI Web", "Segoe UI", "Segoe WP", "Segoe UI Emoji", Tahoma, Arial, sans-serif] ' ><span>Instructions</span></div>    
