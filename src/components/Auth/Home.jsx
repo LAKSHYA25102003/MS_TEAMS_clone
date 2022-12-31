@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext, useEffect} from 'react'
 import hpi2 from "../../images/hpi2.jpeg";
 import child1 from "../../images/child1.jpeg";
 import education from "../../images/education.jpeg";
 import enterprise from "../../images/enterprise.jpeg";
 import buisness from "../../images/buisness.jpeg";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import micro_fav from "../../images/micro.ico"
 import Navbar from './Navbar';
+import AuthContext from '../../Context/AuthContext/AuthContext';
 // import teams from "../../images/teams.ico"
 
 function Home() {
