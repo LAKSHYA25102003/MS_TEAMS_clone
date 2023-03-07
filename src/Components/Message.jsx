@@ -15,7 +15,7 @@ function Message({ own }) {
           </div>
           <div
             id="messageTime"
-            className="w-1/2 flex justify-end items-center gap-3 px-3 font-light text-sm"
+            className="w-1/2 flex justify-end items-center gap-3 px-3 font-light text-sm flex-wrap"
           >
             <div>Date</div>
             <div>Time</div>

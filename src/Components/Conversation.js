@@ -7,7 +7,7 @@ import Message from './Message';
 
 function Conversation() {
     return (
-        <div id='conversation' className='fixed top-[60px] left-[75px] md:left-[395px] right-0 h-[100vh] bg-[#ebebeb70]'>
+        <div id='conversation' className='fixed top-[48px] left-[75px] md:left-[395px] right-0 h-[100vh] bg-[#ebebeb70]'>
             <div id='conversationTop' className='flex items-center border-b-[1px] border-gray-300 h-[65px]'>
                 <div className='flex w-1/2  items-center space-x-3'>
                     <img className='h-[43px] w-[43px] rounded-full ml-3 cursor-pointer' src={Avatar} alt="Lakshya" />
