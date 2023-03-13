@@ -1,10 +1,11 @@
-import { fetchMessagesLoading, fetchMessagesFail, fetchMessagesSuccess,update } from "./messageSlics";
+import { fetchMessagesLoading, fetchMessagesFail, fetchMessagesSuccess, updatemessages } from "./messageSlics";
 
-export const fetchMessages = (id,{fid,friend}) => async dispatch => {
+export const fetchMessages = ({ conversation, friend }) => async dispatch => {
     const BaseUrl = process.env.REACT_APP_BASE_URL;
+
     dispatch(fetchMessagesLoading);
     try {
-        let url = `${BaseUrl}/getMessages/${id}`;
+        let url = `${BaseUrl}/getMessages/${conversation._id}`;
         let response = await fetch(url, {
             method: "post",
             headers: {
@@ -17,27 +18,46 @@ export const fetchMessages = (id,{fid,friend}) => async dispatch => {
         if (response.success) {
             const payload = {
                 messages: response.messages,
-                friend:{
-                    name:friend,
-                    id:fid
-                }
+                friend: {
+                    firstName:friend.firstName,
+                    lastName:friend.lastName,
+                    id: friend._id
+                },
+                conversation
             }
             dispatch(fetchMessagesSuccess(payload));
         }
-        else
-        {
+        else {
             dispatch(fetchMessagesFail(response.message));
         }
-        
+
     } catch (error) {
         dispatch(fetchMessagesFail(error.message));
     }
 }
 
-export const updateMessages=()=>async (dispatch)=>{
-    try{
-        
-    }catch(error){
 
+export const updateMessages = ({message,messages}) => async (dispatch) => {
+    const BaseUrl = process.env.REACT_APP_BASE_URL;
+    try {
+        let url = `${BaseUrl}/sendMessage`;
+        let response = await fetch(url, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token'),
+                "security-key": "PLACEMENT-PROJECT"
+            },
+            body:JSON.stringify(message)
+        })
+        response = await response.json();
+        let  nextMessages = [...messages];
+        if(response.success)
+        {
+            nextMessages.push(response.message);
+            dispatch(updatemessages({messages:nextMessages}));
+        }
+    } catch (error) {
+        console.log(error.toString());
     }
 }

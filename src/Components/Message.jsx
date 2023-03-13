@@ -27,22 +27,22 @@ function Message({ own, m }) {
       )}
       <div
         id={own ? "message_own" : "message"}
-        className="flex flex-col max-w-[70%]"
+        className="flex flex-col w-fit max-w-[70%]"
       >
-        <div id="messageTop" className="flex w-[100%] justify-between">
+        <div id="messageTop" className="flex w-[100%] justify-between ">
           <div id="messageSender" className=" px-3 text-[15px] font-medium">
-            <span>{own?user.firstName+" "+user.lastName:friend.name}</span>
+            <span>{own?user.firstName+" "+user.lastName:friend.firstName+" "+friend.lastName}</span>
           </div>
           <div
             id="messageTime"
-            className="w-1/2 flex justify-end  gap-3 px-3 font-light text-sm flex-wrap"
+            className="flex justify-end  gap-3 px-3 font-light text-sm "
           >
-            <div className="text-[15px]">Date</div>
-            <div className="text-[15px]">Time</div>
+            <div className="text-[15px]">{m.date}</div>
+            <div className="text-[15px]">{m.time}</div>
           </div>
         </div>
         <div id="messageBottom" className="px-3 pb-3 break-all mt-[8px]">
-          {m.text}
+          <div>{m.text}</div>
         </div>
       </div>
     </div>

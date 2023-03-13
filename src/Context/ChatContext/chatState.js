@@ -1,16 +1,17 @@
 import chatContext from "./chatContext";
 import React from 'react'
-
-
+import { fetchMessages } from "../../Redux/messages/messageActions";
+import { useDispatch } from "react-redux";
+import { updateConversations } from "../../Redux/conversations/conversationActions";
 
 
 
 function ChatState(props) {
-
+  const dispatch=useDispatch();
   let BaseUrl=process.env.REACT_APP_BASE_URL;
 
- const createConversation=async (id)=>{
-  let url=`${BaseUrl}/get-conversation/${id}`;
+ const createConversation=async ({friend,friends,conversations})=>{
+  let url=`${BaseUrl}/get-conversation/${friend._id}`;
   let response = await fetch(url,{
       method:"post",
       headers:{
@@ -20,6 +21,14 @@ function ChatState(props) {
       },
   })
   response =await response.json();
+  if(response.success)
+  {
+    if(response.message==="newly created")
+    {
+      dispatch(updateConversations({conversation:response.conversation,friends,conversations,friend}))
+    }
+    dispatch(fetchMessages({conversation:response.conversation,friend}))
+  }
 }
 
  

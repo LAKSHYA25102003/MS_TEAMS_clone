@@ -32,6 +32,7 @@ export default function RenderingFirst() {
       setRedirectLogin({ isTrue: true, msg: "Please Logged In First" });
       Navigate("/login");
     } 
+    // localStorage.removeItem("token");
     if (homePage.isTrue) {
       showAlert("Success", homePage.msg, 3000);
       setHomePage({ isTrue: false, msg: "" });

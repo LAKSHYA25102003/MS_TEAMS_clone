@@ -6,6 +6,7 @@ import { useContext } from 'react'
 import GrpContext from '../Context/GrpContext/GrpContext'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 
 export default function Universal_Navbar() {
@@ -33,7 +34,7 @@ export default function Universal_Navbar() {
       </div>
       <div id='un_middle' className='w-3/4 md:w-1/2 h-full relative flex flex-col items-center justify-center mx-5'>
         <form className=' w-full h-full flex justify-center items-center'>
-          {!focused && <input value={keyword} onChange={(e) => { console.log(typeof (keyword)); setKeyword(e.target.value) }} type="text" className='w-full h-[60%] bg-[rgba(255,255,255,.8)] outline-none rounded-md p-2 ' onFocus={onFocus} onBlur={onBlur} placeholder="&#128269; Search" />}
+          {!focused && <input value={keyword} onChange={(e) => { console.log(typeof (keyword)); setKeyword(e.target.value) }} type="text" className='w-full h-[60%] bg-[rgba(255,255,255,.8)] outline-none rounded-md p-2 ' onFocus={onFocus} onBlur={onBlur} placeholder="Search" />}
           {
             focused && <input value={keyword} onChange={(e) => { setKeyword(e.target.value) }} type="text" className='w-full h-[60%] bg-[#fff] outline-none rounded-md p-2' onFocus={onFocus} onBlur={onBlur} placeholder="Look for message, files and more." />
           }
@@ -42,7 +43,7 @@ export default function Universal_Navbar() {
           {
             keywordUsers.map((m) => {
               if (m._id !== user.id) {
-                return <Searchbar key={m._id} u={m} />
+                return <Searchbar key={m._id} u={m} setKeyword={setKeyword} />
               }
             })
           }

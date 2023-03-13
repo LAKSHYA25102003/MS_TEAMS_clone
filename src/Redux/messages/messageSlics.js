@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState={
     friend:null,
+    conversation:null,
     showMessages:false,
     messages:[],
     isLoading:false,
@@ -19,9 +20,10 @@ const messageSlice=createSlice({
             state.messages = payload.messages;
             state.showMessages=true;
             state.friend=payload.friend;
+            state.conversation=payload.conversation;
         },
         fetchMessagesFail: (state, { payload }) => { state.isLoading = false; state.error = payload },
-        update:(state,{payload})=>{
+        updatemessages:(state,{payload})=>{
             state.messages = payload.messages
         }
     }
@@ -31,6 +33,6 @@ const messageSlice=createSlice({
 
 const { reducer, actions } = messageSlice;
 
-export const { fetchMessagesLoading, fetchMessagesSuccess, fetchMessagesFail,update} = actions;
+export const { fetchMessagesLoading, fetchMessagesSuccess, fetchMessagesFail,updatemessages} = actions;
 
 export default reducer;

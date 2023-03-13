@@ -31,3 +31,23 @@ export const fetchConversations=()=>async dispatch=>{
         dispatch(fetchConversationFail(error.message));
     }
 }
+
+
+export const updateConversations=({conversation,friends,conversations,friend})=>async dispatch=>{
+    dispatch(fetchConversationLoading())
+    let newFriends=[...friends];
+    let newConversations=[...conversations];
+    newConversations.push(conversation);
+    newFriends.push(friend);
+    try{
+        let payload={
+            conversations:newConversations,
+            friends:newFriends
+        }
+        dispatch(fetchConversationSuccess(payload));
+    }
+    catch(error)
+    {
+        dispatch(fetchConversationFail(error.message));
+    }
+}
