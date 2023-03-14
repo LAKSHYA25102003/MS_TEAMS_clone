@@ -6,8 +6,7 @@ import SideBarComponent from '../Components/SideBarComponent/SideBarComponent'
 import { fetchConversations } from '../Redux/conversations/conversationActions'
 import { useDispatch } from 'react-redux'
 function Chats() {
-    const dispatch=useDispatch();
-    dispatch(fetchConversations());
+ 
     return (
         <div id='Chats'>
             <div>

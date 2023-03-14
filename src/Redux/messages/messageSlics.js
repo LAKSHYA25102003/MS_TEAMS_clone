@@ -25,6 +25,9 @@ const messageSlice=createSlice({
         fetchMessagesFail: (state, { payload }) => { state.isLoading = false; state.error = payload },
         updatemessages:(state,{payload})=>{
             state.messages = payload.messages
+        },
+        addMessage:(state,{payload})=>{
+            state.messages = payload.messages
         }
     }
 
@@ -33,6 +36,6 @@ const messageSlice=createSlice({
 
 const { reducer, actions } = messageSlice;
 
-export const { fetchMessagesLoading, fetchMessagesSuccess, fetchMessagesFail,updatemessages} = actions;
+export const { fetchMessagesLoading, fetchMessagesSuccess, fetchMessagesFail,updatemessages,addMessage} = actions;
 
 export default reducer;

@@ -7,12 +7,20 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { updateMessages } from '../Redux/messages/messageActions';
 import { useDispatch } from 'react-redux';
+import { useContext } from 'react';
+import chatContext from '../Context/ChatContext/chatContext';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 const moment = require('moment');
 
 
+
 function Conversation() {
+    const scrollRef = useRef();
+    const { sendMess, getMessage } = useContext(chatContext);
+    const { getOnlineUsers } = useContext(chatContext);
     const nowtime = moment();
-    const dispatch=useDispatch();
+    const dispatch = useDispatch();
     let [text, setText] = useState("");
     let { showMessages, messages, friend, conversation } = useSelector(state => { return state.messages })
     let { user } = useSelector(state => { return state.user })
@@ -32,16 +40,25 @@ function Conversation() {
             date: nowtime.format('DD-MM-YYYY'),
             time: nowtime.format('HH:mm'),
         }
-        dispatch(updateMessages({message,messages}));
+        dispatch(updateMessages({ message, messages, sendMess, friend }));
         setText("");
     }
+    
+    useEffect(() => {
+        scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages.length])
+
+
+
+
+
 
     return (
         showMessages ? <div id='conversation' className='fixed top-[48px] left-[75px] md:left-[395px] right-0 h-[100vh] bg-[#ebebeb70]'>
             <div id='conversationTop' className='flex items-center border-b-[1px] border-gray-300 h-[65px]'>
                 <div className='flex w-1/2  items-center space-x-3'>
                     <img className='h-[43px] w-[43px] rounded-full ml-3 cursor-pointer' src={Avatar} alt="Lakshya" />
-                    <div className='font-bold text-[20px] cursor-pointer'>{friend.firstName+" "+friend.lastName}</div>
+                    <div className='font-bold text-[20px] cursor-pointer'>{friend.firstName + " " + friend.lastName}</div>
                     <div className='cursor-pointer'>Chat</div>
                     <div className='cursor-pointer'>Files</div>
                     <div className='cursor-pointer'>Organisation</div>
@@ -53,7 +70,7 @@ function Conversation() {
             <div id='conversatioMid' className='pl-10 md:pl-20 pr-[60px] md:pr-[85px]' style={{ "overflowY": "auto", "height": "calc(100vh - 242.2px)" }}>
                 {
                     messages.map((m) => {
-                        return <Message key={m._id} own={m.senderId === user.id ? true : false} m={m} />
+                        return <div key={m._id} ref={scrollRef}><Message  own={m.senderId === user.id ? true : false} m={m} /></div>
                     })
                 }
             </div>
@@ -78,7 +95,7 @@ function Conversation() {
                             <EmojiEmotions htmlColor="black" className="" />
                         </div>
                     </div>
-                    <div onClick={sendMessage}  className='cursor-pointer'>
+                    <div onClick={sendMessage} className='cursor-pointer'>
                         <SendOutlinedIcon />
                     </div>
                 </div>

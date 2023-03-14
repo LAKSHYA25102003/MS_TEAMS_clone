@@ -8,9 +8,11 @@ import Alert from "../Alert";
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { fetchOnlineUsers } from "../../Redux/onlineUsers/onlineUserActions";
+import { useDispatch } from "react-redux";
 
 export default function RenderingFirst() {
-
+  const dispatch=useDispatch();
   const [alert, setAlert] = useState(null);
   const { homePage, setHomePage } = useContext(AuthContext);
   const { redirectLogin, setRedirectLogin } = useContext(AuthContext);
@@ -32,12 +34,13 @@ export default function RenderingFirst() {
       setRedirectLogin({ isTrue: true, msg: "Please Logged In First" });
       Navigate("/login");
     } 
-    // localStorage.removeItem("token");
+
     if (homePage.isTrue) {
       showAlert("Success", homePage.msg, 3000);
       setHomePage({ isTrue: false, msg: "" });
     }
   }, []);
+
 
   return (
     <div>

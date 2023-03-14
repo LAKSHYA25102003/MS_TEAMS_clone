@@ -5,14 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/store';
 import { Provider } from 'react-redux';
+import ChatState from './Context/ChatContext/chatState';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <ChatState>
       <App />
-    </Provider>
-  </React.StrictMode>
+    </ChatState>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
