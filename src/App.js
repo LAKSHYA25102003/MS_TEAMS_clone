@@ -44,14 +44,8 @@ function App() {
 
   useEffect(() => {
     Socket?.on("getMessage", (message) => {
-      // dispatch(addmessage({ messages, message }));
       setArrivalMessage(message);
     })
-
-    Socket?.on("getUsers", (onlineUsers) => {
-      dispatch(fetchOnlineUsers(onlineUsers));
-    })
-
   }, [])
 
   useEffect(()=>{
@@ -68,7 +62,11 @@ function App() {
     if (user !== null) {
       Socket?.emit("addUser", user.id);
     }
-    
+
+    Socket?.on("getUsers", (onlineUsers) => {
+      dispatch(fetchOnlineUsers(onlineUsers));
+    })
+
   }, [user])
 
 
