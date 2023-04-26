@@ -7,8 +7,11 @@ import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
 import { useNavigate } from 'react-router';
+import { fetchConversations } from '../Redux/conversations/conversationActions';
+import { useDispatch } from 'react-redux';
 
 export default function Universal_left_bar() {
+    const dispatch=useDispatch();
     const navigate=useNavigate();
     return (
         <>
@@ -33,7 +36,7 @@ export default function Universal_left_bar() {
                     <div className='flex justify-center items-center'>
                         <ChatOutlinedIcon/>
                     </div>
-                    <div className=' text-center' style={{"fontSize":"12px"}} onClick={()=>{navigate("/chats")}}>
+                    <div className=' text-center' style={{"fontSize":"12px"}} onClick={()=>{navigate("/chats");dispatch(fetchConversations())}}>
                         Chat
                     </div>
                 </div>

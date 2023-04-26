@@ -28,6 +28,7 @@ import { Socket } from './SocketClient';
 import { fetchOnlineUsers } from './Redux/onlineUsers/onlineUserActions';
 import { addmessage } from './Redux/messages/messageActions';
 import { useState } from 'react';
+import VideoCall from './Pages/VideoCall';
 
 
 
@@ -86,6 +87,7 @@ function App() {
             <Route path='/set-new-password/:token' element={<SetNewPassword />}></Route>
             <Route path='/create-password/:token' element={<CreateNewPassword />}></Route>
             <Route path='/logout' element={<Logout />}></Route>
+            <Route path='/video-call/:id' element={<VideoCall />}></Route>
           </Routes>
         </Router>
 

@@ -10,9 +10,12 @@ import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import { Link, useLocation } from 'react-router-dom';
 import GrpContext from '../../Context/GrpContext/GrpContext';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { fetchConversations } from '../../Redux/conversations/conversationActions';
+
 export default function SideBarComponent() {
     const navigate=useNavigate();
-
+    const dispatch=useDispatch();
     const {setgrpState} = useContext(GrpContext);
     const location = useLocation();
     const [currloc,setCurrloc] = useState("");
@@ -33,7 +36,7 @@ export default function SideBarComponent() {
             <div><NotificationsActiveOutlinedIcon/></div>
             <div>Activity</div>
         </button>
-        <button class='hover:bg-white ' onClick={()=>{navigate("/chats")}}>
+        <button class='hover:bg-white ' onClick={()=>{navigate("/chats");dispatch(fetchConversations())}}>
             <div><ChatBubbleOutlineOutlinedIcon/></div>
             <div>Chats</div>
         </button>

@@ -3,8 +3,11 @@ import mic_logo from "../../Images/mic_logo.png"
 import { Link, useNavigate } from 'react-router-dom'
 import AuthContext from '../../Context/AuthContext/AuthContext'
 import Alert from '../Alert'
+import { fetchUser } from '../../Redux/user.js/userActions'
+import { useDispatch } from 'react-redux'
 
 const LoginOtp = () => {
+    const dispatch=useDispatch();
     const {redirectOTP, setRedirectOTP, checkOTP, homePage, setHomePage, setRedirectLogin, redirectLogin} = useContext(AuthContext);
 
     const Navigate = useNavigate();
@@ -66,6 +69,7 @@ const LoginOtp = () => {
                 showAlert("success", "Logged In", 3000);
                 setOtp("");
                 setHomePage({isTrue:true, msg:"Successfully Logged In"});
+                dispatch(fetchUser());
                 Navigate("/home")
             }
         }

@@ -35,6 +35,8 @@ export default function RenderingFirst() {
       Navigate("/login");
     } 
 
+
+
     if (homePage.isTrue) {
       showAlert("Success", homePage.msg, 3000);
       setHomePage({ isTrue: false, msg: "" });

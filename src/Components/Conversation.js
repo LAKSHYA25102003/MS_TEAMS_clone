@@ -1,7 +1,9 @@
 import React from 'react'
 import Avatar from "../Images/profile.jpg"
 import { PermMedia, Label, Room, EmojiEmotions } from "@mui/icons-material"
+import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import Message from './Message';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -11,11 +13,13 @@ import { useContext } from 'react';
 import chatContext from '../Context/ChatContext/chatContext';
 import { useEffect } from 'react';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 const moment = require('moment');
 
 
 
 function Conversation() {
+    const navigate=useNavigate();
     const scrollRef = useRef();
     const { sendMess, getMessage } = useContext(chatContext);
     const { getOnlineUsers } = useContext(chatContext);
@@ -43,7 +47,7 @@ function Conversation() {
         dispatch(updateMessages({ message, messages, sendMess, friend }));
         setText("");
     }
-    
+
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages.length])
@@ -54,7 +58,7 @@ function Conversation() {
 
 
     return (
-        showMessages ? <div id='conversation' className='fixed top-[48px] left-[75px] md:left-[395px] right-0 h-[100vh] bg-[#ebebeb70]'>
+        showMessages ? <div id='conversation' className='fixed top-[48px] left-[72px] md:left-[392px] right-0 h-[100vh] bg-[#ebebeb70]'>
             <div id='conversationTop' className='flex items-center border-b-[1px] border-gray-300 h-[65px]'>
                 <div className='flex w-1/2  items-center space-x-3'>
                     <img className='h-[43px] w-[43px] rounded-full ml-3 cursor-pointer' src={Avatar} alt="Lakshya" />
@@ -64,13 +68,19 @@ function Conversation() {
                     <div className='cursor-pointer'>Organisation</div>
                     <div className='cursor-pointer'>Activity</div>
                 </div>
-                <div className='flex justify-end items-center'>
+                <div className='w-1/2 flex justify-end '>
+                    <div className='border-[.5px] px-[10px] border-[gray] cursor-pointer rounded-[2px] bg-white mr-[10px]' onClick={()=>{navigate(`/video-call/${friend.id}`)}}>
+                        <VideocamOutlinedIcon/>
+                    </div>
+                    <div className='border-[.5px] px-[10px] border-[gray] cursor-pointer rounded-[2px] bg-white mr-[10px]'>
+                        <CallOutlinedIcon/>
+                    </div>
                 </div>
             </div>
             <div id='conversatioMid' className='pl-10 md:pl-20 pr-[60px] md:pr-[85px]' style={{ "overflowY": "auto", "height": "calc(100vh - 242.2px)" }}>
                 {
                     messages.map((m) => {
-                        return <div key={m._id} ref={scrollRef}><Message  own={m.senderId === user.id ? true : false} m={m} /></div>
+                        return <div key={m._id} ref={scrollRef}><Message own={m.senderId === user.id ? true : false} m={m} /></div>
                     })
                 }
             </div>

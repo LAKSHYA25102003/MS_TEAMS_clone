@@ -7,9 +7,11 @@ import GrpContext from '../Context/GrpContext/GrpContext'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Universal_Navbar() {
+  const navigate=useNavigate();
   const { user } = useSelector(state => { return state.user });
   const { fetchKeyWordUser, keywordUsers } = useContext(GrpContext);
   const [keyword, setKeyword] = useState("");
@@ -51,7 +53,7 @@ export default function Universal_Navbar() {
       </div>
       <div id='un_right ' className=' w-1/4 h-full px-5'>
         <div id='avatar' className='h-full w-full flex justify-end items-center'>
-          <img src={Avatar} alt="Avatar" className='h-[45px] w-[45px] rounded-full  cursor-pointer' />
+          <img src={Avatar} alt="Avatar" className='h-[45px] w-[45px] rounded-full  cursor-pointer' onClick={()=>{localStorage.removeItem("token");navigate("/login")}} />
         </div>
       </div>
     </div>
